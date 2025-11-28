@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../assets/css/Level1.css";
 function level2() {
     return (

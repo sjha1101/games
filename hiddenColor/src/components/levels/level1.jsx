@@ -7,24 +7,31 @@ function Level1() {
     const navigate = useNavigate();
 
     const restartGame = () => {
-        navigate(0);         // Refresh page → Restart everything
+        navigate(0); // Refresh page → Restart everything
     };
 
     const [life, setLife] = useState(2);
     const [time, setTime] = useState(20);
     const [correctIndex] = useState(Math.floor(Math.random() * 5));
 
-    // GAME OVER FUNCTION
+    // ⭐ SCORE UPDATE FUNCTION
+    const updateScore = (points) => {
+        const current = Number(localStorage.getItem("bestScore")) || 0;
+        const newScore = current + points;
+        localStorage.setItem("bestScore", newScore);
+    };
+
+    // GAME OVER
     const gameOver = () => {
         const again = window.confirm("Game Over! Do you want to play again?");
         if (again) {
             restartGame();
         } else {
-            navigate("/");   // Go to home OR any page you want
+            navigate("/");
         }
     };
 
-    // TIMER LOGIC
+    // TIMER
     useEffect(() => {
         if (time === 0) {
             gameOver();
@@ -38,10 +45,13 @@ function Level1() {
         return () => clearInterval(interval);
     }, [time]);
 
-
-    // CIRCLE CLICK LOGIC
+    // CLICK LOGIC
     const handleClick = (index) => {
         if (index === correctIndex) {
+
+            // ⭐ ADD 5 points for Level 1
+            updateScore(5);
+
             navigate("/level2");
         } else {
             if (life > 1) {
