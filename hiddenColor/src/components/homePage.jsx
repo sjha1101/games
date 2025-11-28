@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 function HomePage() {
 
-    // Values you can later store in localStorage or backend
     const highScore = localStorage.getItem("bestScore") || 0;
 
     return (
@@ -10,7 +9,6 @@ function HomePage() {
 
             <h1 className="mb-4 fw-bold">Find the hidden color </h1>
 
-            {/* Stats Section */}
             <div className="row justify-content-center mb-4">
                 <div className="col-10 col-md-4 bg-light p-3 m-2 rounded shadow">
                     <h4>High score</h4>
@@ -18,10 +16,9 @@ function HomePage() {
                 </div>
             </div>
 
-            {/* Buttons Section */}
             <div className="mt-4">
                 <Link to="/level1" className="btn btn-primary btn-lg px-4 py-2 m-2">
-                    ▶ Start Level 1
+                    ▶ Start
                 </Link>
 
                 <Link to="/levels" className="btn btn-success btn-lg px-4 py-2 m-2">
