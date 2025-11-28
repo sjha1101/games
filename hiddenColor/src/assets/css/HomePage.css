@@ -1,0 +1,186 @@
+/* -----------------------------------------
+   Background
+----------------------------------------- */
+body {
+    height: 100vh;
+    background-image: url('../images/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+
+/* -----------------------------------------
+   Main Wrapper (Glass + Floating Animation)
+----------------------------------------- */
+.home-wrapper {
+    position: relative;
+    backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px 30px;
+    border-radius: 20px;
+    max-width: 750px;
+    margin: 80px auto;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+
+    /* Floating Animation */
+    animation: floatUp 4s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Bottom Glow Shadow */
+.home-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 30px;
+    background: radial-gradient(rgba(255, 255, 255, 0.4), transparent);
+    filter: blur(20px);
+    z-index: -1;
+}
+
+
+/* -----------------------------------------
+   Title (Neon Pulse)
+----------------------------------------- */
+.home-title {
+    color: #fff;
+    font-size: 38px;
+    font-weight: 400;
+    text-shadow: 0 0 1px #fff;
+    margin-bottom: 25px;
+
+    animation: neonGlow 2.5s infinite alternate;
+}
+
+/* 
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 40px #fff;
+    }
+} */
+
+
+/* -----------------------------------------
+   High Score Box (Shine Effect)
+----------------------------------------- */
+.score-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    padding: 20px 10px;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.score-box h4 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.score-box p {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Shine Animation */
+.score-box::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: skewX(-20deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        top: -100%;
+    }
+
+    50% {
+        top: 120%;
+    }
+
+    100% {
+        top: 120%;
+    }
+}
+
+
+/* -----------------------------------------
+   Buttons (Glass + Gradient Border + Hover Animation)
+----------------------------------------- */
+.btn-game {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px !important;
+    font-size: 22px !important;
+    padding: 12px 35px !important;
+    border: none !important;
+    color: rgb(0, 0, 0) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    cursor: pointer;
+
+    /* Border Gradient */
+    border: 3px solid rgba(255, 255, 255, 0.7) !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.btn-game:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Click Ripple Effect */
+.btn-game:active {
+    transform: scale(0.96);
+    box-shadow: 0 0 25px white;
+}
+
+/* Extra Glow Border */
+.btn-game::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #ffffff80, #ffffff30, #ffffff80);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}

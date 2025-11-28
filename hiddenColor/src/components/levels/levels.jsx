@@ -22,17 +22,16 @@ function Levels() {
             <h1 className="title">Select Level</h1>
 
             <div className="row justify-content-center g-4 mt-4">
-
                 {levels.map((lvl) => (
-                    <div className="col-6 col-md-4 col-lg-3" key={lvl.number}>
+                    <div className="col-4 col-sm-4 col-md-3 col-lg-2 level-col" key={lvl.number}>
                         <Link to={`/level${lvl.number}`} className="level-btn">
                             <span className="level-icon">{lvl.icon}</span>
                             <span className="level-text">Level {lvl.number}</span>
                         </Link>
                     </div>
                 ))}
-
             </div>
+
         </div>
     );
 }

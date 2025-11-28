@@ -63,3 +63,11 @@ body {
 .level-text {
     font-size: 20px;
 }
+
+/* Force exactly 5 columns in each row */
+@media (min-width: 992px) {
+    .level-col {
+        flex: 0 0 calc(100% / 5);
+        max-width: calc(100% / 5);
+    }
+}
