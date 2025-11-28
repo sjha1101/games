@@ -1,9 +1,36 @@
 .game-container {
-    background: black;
     height: 100vh;
+    background: linear-gradient(45deg,
+            #6a11cb,
+            #b721ff,
+            #c471ed,
+            #ffc8cb,
+            #ff6a88,
+            #ff9a9e,
+            #ffc3a0,
+            #fbc2eb,
+            #a1c4fd,
+            #3f5efb);
+    background-size: 300% 300%;
+    animation: bgMove 10s ease infinite;
     padding-top: 20px;
     color: white;
 }
+
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 .circle-btn {
     width: 100px;
@@ -19,11 +46,11 @@
 }
 
 .bottom-block {
-    width: 200px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
     background: darkred;
     position: absolute;
-    bottom: 350px;
+    border-radius: 50%;
     left: 50%;
     transform: translateX(-50%);
 }

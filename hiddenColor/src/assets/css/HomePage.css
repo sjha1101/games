@@ -10,7 +10,6 @@ body {
     overflow-x: hidden;
 }
 
-
 /* -----------------------------------------
    Main Wrapper (Glass + Floating Animation)
 ----------------------------------------- */
@@ -70,18 +69,6 @@ body {
 
     animation: neonGlow 2.5s infinite alternate;
 }
-
-/* 
-@keyframes neonGlow {
-    from {
-        text-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff;
-    }
-
-    to {
-        text-shadow: 0 0 20px #fff, 0 0 40px #fff;
-    }
-} */
-
 
 /* -----------------------------------------
    High Score Box (Shine Effect)

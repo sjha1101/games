@@ -11,7 +11,7 @@ function Level1() {
     };
 
     const [life, setLife] = useState(2);
-    const [time, setTime] = useState(10);
+    const [time, setTime] = useState(20);
     const [correctIndex] = useState(Math.floor(Math.random() * 5));
 
     // GAME OVER FUNCTION
