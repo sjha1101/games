@@ -8,10 +8,10 @@ function HomePage() {
     return (
         <div className="home-wrapper text-center">
 
-            <h1 className="home-title">Find the Hidden Color</h1>
+            <h6 className="home-title">Find the hidden color</h6>
 
             <div className="row justify-content-center mb-4">
-                <div className="col-10 col-md-4 score-box">
+                <div className="col-7 col-md-4 score-box">
                     <h4>High Score</h4>
                     <p>{highScore}</p>
                 </div>

@@ -14,12 +14,13 @@ body {
    Main Wrapper (Glass + Floating Animation)
 ----------------------------------------- */
 .home-wrapper {
+    width: 90%;
     position: relative;
     backdrop-filter: blur(18px);
     background: rgba(255, 255, 255, 0.15);
     padding: 40px 30px;
     border-radius: 20px;
-    max-width: 750px;
+    max-width: 650px;
     margin: 80px auto;
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -62,8 +63,8 @@ body {
 ----------------------------------------- */
 .home-title {
     color: #fff;
-    font-size: 38px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 350;
     text-shadow: 0 0 1px #fff;
     margin-bottom: 25px;
 
